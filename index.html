@@ -2,38 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://examdawn.github.io">
-    <script>
-        (function() {
-            const newBase = 'https://examdawn.github.io';
-            const preserveQuery = true;
-            
-            // Capture original path and parameters
-            const originalPath = window.location.pathname;
-            const originalSearch = window.location.search;
-            const originalHash = window.location.hash;
-            
-            // Build target URL
-            let target = newBase + originalPath;
-            if (preserveQuery) target += originalSearch + originalHash;
-            
-            // Permanent redirect with history replacement
-            window.location.replace(target);
-        })();
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // Get the current URL
+        var currentUrl = window.location.href;
+
+        // Replace the domain from bca-students.github.io to examdawn.github.io
+        var newUrl = currentUrl.replace('bca-students.github.io', 'examdawn.github.io');
+
+        // Redirect to the new URL
+        window.location.replace(newUrl);
     </script>
-    <title>Redirecting to ExamDawn</title>
 </head>
 <body>
-    <h1>Redirecting to New Domain</h1>
-    <p>Please wait while we transfer you to: <br>
-        <a href="https://examdawn.github.io" id="dynamicLink">
-            https://examdawn.github.io<span id="pathDisplay"></span>
-        </a>
-    </p>
-    <script>
-        // Visual feedback for path preservation
-        document.getElementById('pathDisplay').textContent = 
-            window.location.pathname + window.location.search;
+    <p>If you are not redirected automatically, follow this <a href="" id="redirect-link">link</a>.</p>
+    <script type="text/javascript">
+        // Set the href of the link to the new URL
+        document.getElementById('redirect-link').href = newUrl;
     </script>
 </body>
 </html>
