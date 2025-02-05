@@ -8,18 +8,24 @@
         // Get the current URL
         var currentUrl = window.location.href;
 
-        // Replace the domain from bca-students.github.io to examdawn.github.io
-        var newUrl = currentUrl.replace('bca-students.github.io', 'examdawn.github.io');
+        // Check if the current URL contains the old domain
+        if (currentUrl.includes('bca-students.github.io')) {
+            // Replace the domain from bca-students.github.io to examdawn.github.io
+            var newUrl = currentUrl.replace('bca-students.github.io', 'examdawn.github.io');
 
-        // Redirect to the new URL
-        window.location.replace(newUrl);
+            // Redirect to the new URL
+            window.location.replace(newUrl);
+        } else {
+            // If the URL does not match, do nothing or handle accordingly
+            console.warn("This page is not a valid redirect.");
+        }
     </script>
 </head>
 <body>
     <p>If you are not redirected automatically, follow this <a href="" id="redirect-link">link</a>.</p>
     <script type="text/javascript">
         // Set the href of the link to the new URL
-        document.getElementById('redirect-link').href = newUrl;
+        document.getElementById('redirect-link').href = newUrl || '#';
     </script>
 </body>
 </html>

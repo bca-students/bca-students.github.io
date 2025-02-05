@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <script type="text/javascript">
+        // Get the current URL
+        var currentUrl = window.location.href;
+
+        // Check if the current URL contains the old domain
+        if (currentUrl.includes('bca-students.github.io')) {
+            // Replace the domain from bca-students.github.io to examdawn.github.io
+            var newUrl = currentUrl.replace('bca-students.github.io', 'examdawn.github.io');
+
+            // Redirect to the new URL
+            window.location.replace(newUrl);
+        }
+    </script>
+</head>
+<body>
+    <h1>404 - Page Not Found</h1>
+    <p>The page you are looking for does not exist. You will be redirected shortly.</p>
+    <p>If you are not redirected automatically, follow this <a href="" id="redirect-link">link</a>.</p>
+    <script type="text/javascript">
+        // Set the href of the link to the new URL
+        document.getElementById('redirect-link').href = newUrl || '#';
+    </script>
+</body>
+</html>
