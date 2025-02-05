@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=https://examdawn.github.io">
+    <script>
+        const newDomain = 'https://examdawn.github.io';
+        const preservePath = true; // Set to false to discard original path
+        
+        (function() {
+            const target = preservePath 
+                ? newDomain + window.location.pathname + window.location.search
+                : newDomain;
+            
+            window.location.replace(target);
+        })();
+    </script>
+    <title>Redirecting to ExamDawn</title>
+</head>
+<body>
+    <h1>Website Moved</h1>
+    <p>Automatic redirection in progress...</p>
+    <p>If not redirected, please visit:
+        <a href="https://examdawn.github.io">https://examdawn.github.io</a>
+    </p>
+</body>
+</html>
