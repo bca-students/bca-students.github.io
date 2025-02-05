@@ -4,24 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; url=https://examdawn.github.io">
     <script>
-        const newDomain = 'https://examdawn.github.io';
-        const preservePath = true; // Set to false to discard original path
-        
         (function() {
-            const target = preservePath 
-                ? newDomain + window.location.pathname + window.location.search
-                : newDomain;
+            const newBase = 'https://examdawn.github.io';
+            const preserveQuery = true;
             
+            // Capture original path and parameters
+            const originalPath = window.location.pathname;
+            const originalSearch = window.location.search;
+            const originalHash = window.location.hash;
+            
+            // Build target URL
+            let target = newBase + originalPath;
+            if (preserveQuery) target += originalSearch + originalHash;
+            
+            // Permanent redirect with history replacement
             window.location.replace(target);
         })();
     </script>
     <title>Redirecting to ExamDawn</title>
 </head>
 <body>
-    <h1>Website Moved</h1>
-    <p>Automatic redirection in progress...</p>
-    <p>If not redirected, please visit:
-        <a href="https://examdawn.github.io">https://examdawn.github.io</a>
+    <h1>Redirecting to New Domain</h1>
+    <p>Please wait while we transfer you to: <br>
+        <a href="https://examdawn.github.io" id="dynamicLink">
+            https://examdawn.github.io<span id="pathDisplay"></span>
+        </a>
     </p>
+    <script>
+        // Visual feedback for path preservation
+        document.getElementById('pathDisplay').textContent = 
+            window.location.pathname + window.location.search;
+    </script>
 </body>
 </html>
